@@ -1,22 +1,51 @@
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.container {
+  background-color: #363941;
+  box-shadow: 0 4px 8px 0 #41B6E6;
+
   transition: 0.3s;
   width: 500px;
+  height: 300px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+.container:hover {
+  box-shadow: 0 8px 16px 0 #41B6E6;
 }
 
-/* Add some padding inside the card container */
 .cardInfo {
-  padding: 2px 16px;
-  
-
+  position: relative;
+  padding: 2px 15px;
 }
 
 .posterImg {
-  width: 50%
+  width: 170px;
+  height: 250px;
+  padding-top: 25px;
+  padding-left: 25px;
+}
+
+.cardButton {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  border-style: none;
+  font-size: 20px;
+  color: white;
+  background-color: #41B6E6;
+  transition: transform 200ms;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 20px;
+  right: 75px;
+  margin-bottom: 10px
+}
+
+.cardButton:hover {
+  transform: scale(1.25);
 }

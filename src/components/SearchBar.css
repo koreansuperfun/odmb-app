@@ -1,0 +1,85 @@
+.searchBar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.inputSearch {
+  box-sizing: border-box;
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ;
+  background-color: #db3eb1;
+  padding-right: 40px;
+  color: white;
+}
+
+.inputSearch::placeholder {
+  color: rgba(255, 255, 255, .5);
+  font-size: 18px;
+}
+
+.buttonSearch {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  color: white;
+  background-color: transparent;
+}
+
+.buttonSearch:focus~.inputSearch {
+  width: 500px;
+  border-radius: 0px;
+  background-color: transparent;
+  border: 3px solid #db3eb1;
+  border-radius: 15px;
+  transition: all 500ms;
+  color: white;
+  padding-left:20px;
+}
+
+.inputSearch:focus {
+  width: 500px;
+  border-radius: 0px;
+  background-color: transparent;
+  border: 3px solid #db3eb1;
+  border-radius: 15px;
+  transition: all 500ms;
+  color: white;
+  padding-left:20px;
+}
+
+.resultCards {
+  display: grid;
+  grid-template-columns: repeat(3, 500px);
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1600px) {
+  .resultCards {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .resultCards {
+    display: grid;
+    grid-template-columns: repeat(1, 500px);
+  }
+}

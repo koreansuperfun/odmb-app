@@ -1,0 +1,30 @@
+.errorCard {
+    /* Add shadows to create the "card" effect */
+    background-color: #363941;
+    box-shadow: 0 4px 8px 0 red;
+    transition: 0.3s;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    padding: 20px;
+
+    /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; */
+  }
+
+  .emoji {
+    font-size: 150px;
+  }
+
+  /* On mouse-over, add a deeper shadow */
+.errorCard:hover {
+    box-shadow: 0 8px 16px 0 red;
+    top: -2px;
+  }

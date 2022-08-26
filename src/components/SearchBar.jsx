@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Card from './Card'
 
 const omdb_url = 'https://www.omdbapi.com/?apikey=da1830dd'
 
@@ -10,7 +11,8 @@ class SearchBar extends Component {
         this.state = {
             search: '',
             results: [],
-            errorMsg: ''
+            errorMsg: '',
+            responseStatus: false,
         }
     }
 
@@ -20,14 +22,24 @@ class SearchBar extends Component {
         axios.get(omdb_url + `&s=${this.state.search}`)
         .then(res => {
             console.log(res)
-            this.setState({
-                results: res.data.Search
-            })
+            if (res.data.Response === 'True') {
+                this.setState({
+                    results: res.data.Search,
+                    responseStatus: true
+                })
+            } else {
+                this.setState({
+                    errorMsg: res.data.Error,
+                    responseStatus: false
+                })
+            }
+
         })
         .catch(err => {
             console.log(err)
             this.setState({
-                errorMsg: 'Sorry! Can\'t reach server'
+                errorMsg: 'Sorry! Can\'t reach server',
+                responseStatus: false
             })
         })
         event.preventDefault();
@@ -40,7 +52,7 @@ class SearchBar extends Component {
     }
 
     render() {
-        const { search, results, errorMsg } = this.state
+        const { search, results, errorMsg, responseStatus } = this.state
         return (
             <div>
                 <p>Search Bar</p>
@@ -53,10 +65,16 @@ class SearchBar extends Component {
                     </input>
                 </form>
                 {
-                    results.length ?
-                    results.map(result => <div key={result.imdbID}>{result.Title}</div>) :
-                    null
+                    responseStatus ?
+                    results.map(result => <Card key={result.imdbID} title={result.Title} 
+                    posterURL={result.Poster} year={result.Year}/>) :
+                    <div>{errorMsg}</div>
                 }
+                {/* {
+                    responseStatus ?
+                    results.map(result => <div key={result.imdbID}>{result.Title}</div>) :
+                    <div>{errorMsg}</div>
+                } */}
             </div>
         )
     }

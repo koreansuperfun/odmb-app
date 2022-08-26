@@ -1,7 +1,9 @@
 .container {
-  background-color: #363941;
-  box-shadow: 0 4px 8px 0 #41B6E6;
-
+  background-color: #1f2024;
+  /* box-shadow: 0 8px 16px 0 #41B6E6; */
+  -webkit-box-shadow: 0 0 8px 4px #41B6E6;
+  -moz-box-shadow: 0 0 8px 4px #41B6E6;
+  box-shadow: 0 0 8px 4px #41B6E6;
   transition: 0.3s;
   width: 500px;
   height: 300px;
@@ -13,7 +15,11 @@
 }
 
 .container:hover {
-  box-shadow: 0 8px 16px 0 #41B6E6;
+  /* box-shadow: 0 16px 32px 0 #41B6E6; */
+  -webkit-box-shadow: 0 0 16px 8px #41B6E6;
+  -moz-box-shadow:  0 0 16px 8px #41B6E6;
+  box-shadow:  0 0 16px 8px #41B6E6;
+  transform: scale(1.05);
 }
 
 .cardInfo {
@@ -41,7 +47,7 @@
 
   position: absolute;
   bottom: 20px;
-  right: 75px;
+  right: 77.5px;
   margin-bottom: 10px
 }
 

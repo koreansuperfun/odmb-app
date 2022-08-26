@@ -43,7 +43,7 @@
 .buttonSearch:focus~.inputSearch {
   width: 500px;
   border-radius: 0px;
-  background-color: transparent;
+  background-color: #202020;
   border: 3px solid #db3eb1;
   border-radius: 15px;
   transition: all 500ms;
@@ -54,7 +54,7 @@
 .inputSearch:focus {
   width: 500px;
   border-radius: 0px;
-  background-color: transparent;
+  background-color: #202020;
   border: 3px solid #db3eb1;
   border-radius: 15px;
   transition: all 500ms;

@@ -4,7 +4,11 @@ import Card from './Card'
 import './SearchBar.css'
 import ErrorCard from './ErrorCard'
 
-const omdb_url = 'https://www.omdbapi.com/?apikey=fb980b0'  //Not a good practice to keep API key here, but for demonstration purposes I put it here for now.
+/**
+ * BAD PRACTICE TO PUT API KEY IN HERE AND MAKE REPO PUBLIC.
+ * But it's for demostration purposes.
+ */
+const omdb_url = 'https://www.omdbapi.com/?apikey=fb980b0'
 
 /**
  * Creates the search bar/input area for our website.

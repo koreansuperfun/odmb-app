@@ -4,8 +4,12 @@ import Card from './Card'
 import './SearchBar.css'
 import ErrorCard from './ErrorCard'
 
-const omdb_url = 'https://www.omdbapi.com/?apikey=da1830dd'
+const omdb_url = 'https://www.omdbapi.com/?apikey=da1830dd'  //Not a good practice to keep API key here, but for demonstration purposes I put it here for now.
 
+/**
+ * Creates the search bar/input area for our website.
+ * It also creates the appropriate card, whether be the result Card or ErrorCard.
+ */
 class SearchBar extends Component {
     constructor(props) {
         super(props)
@@ -20,9 +24,7 @@ class SearchBar extends Component {
     }
 
     handleSubmit = event => {
-        // alert(`You pressed ${this.state.search}`)
-
-        if (this.state.search.length) {
+        if (this.state.search.length) {                       //I wanted to make sure we don't do an API call with an empty string.
             axios.get(omdb_url + `&s=${this.state.search}`)
             .then(res => {
                 if (res.data.Response === 'True') {
@@ -43,7 +45,7 @@ class SearchBar extends Component {
             .catch(err => {
                 console.log(err)
                 this.setState({
-                    errorMsg: 'Sorry! Can\'t reach server',
+                    errorMsg: 'Sorry! Can\'t reach server.',
                     responseStatus: false,
                     ranSubmit: true
                 })
@@ -51,7 +53,6 @@ class SearchBar extends Component {
 
         event.preventDefault();
         }
-        
     }
 
     handleSearchChange = event => {
@@ -63,17 +64,18 @@ class SearchBar extends Component {
     render() {
         const { search, results, errorMsg, responseStatus, ranSubmit } = this.state
 
+        //Logic to see if we should display the ErrorCard.
         let displayError;
         if (!responseStatus && ranSubmit) {
             displayError = <ErrorCard message={errorMsg} />
         }
 
+        //Logic to see if we shoudl display our results if successful.
         let searchResults;
         if (responseStatus) {
             searchResults = results.map(result => <Card key={result.imdbID} title={result.Title}
                 posterURL={result.Poster} year={result.Year} />)
         }
-
 
         return (
             <div>

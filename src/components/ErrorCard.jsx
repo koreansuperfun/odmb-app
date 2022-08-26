@@ -1,12 +1,14 @@
 import React from 'react'
 import './ErrorCard.css'
 
-const test_err_message = "Error Msg Placeholder"
-
+/**
+ * Creates an error card when we don't receive a result, or can't connect to API server.
+ * @param {message} props
+ * @returns ErrorCard.
+ */
 function ErrorCard(props) {
   return (
     <div className='errorCard'>
-    
         <div className ='emoji'>
             &#129335;
         </div>

@@ -1,6 +1,5 @@
 .container {
   background-color: #1f1f24;
-  /* box-shadow: 0 8px 16px 0 #41B6E6; */
   -webkit-box-shadow: 0 0 8px 4px #41B6E6;
   -moz-box-shadow: 0 0 8px 4px #41B6E6;
   box-shadow: 0 0 8px 4px #41B6E6;
@@ -14,7 +13,6 @@
 }
 
 .container:hover {
-  /* box-shadow: 0 16px 32px 0 #41B6E6; */
   -webkit-box-shadow: 0 0 16px 8px #41B6E6;
   -moz-box-shadow:  0 0 16px 8px #41B6E6;
   box-shadow:  0 0 16px 8px #41B6E6;
@@ -25,10 +23,11 @@
   margin-top: 10px;
   position: relative;
   padding: 2px 15px;
+
 }
 
 .movieTitle {
-  font-size: 0.475vw;
+  font-size: 0.5rem;
 }
 
 .posterImg {

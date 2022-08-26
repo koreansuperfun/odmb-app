@@ -1,5 +1,5 @@
 .container {
-  background-color: #1f2024;
+  background-color: #1f1f24;
   /* box-shadow: 0 8px 16px 0 #41B6E6; */
   -webkit-box-shadow: 0 0 8px 4px #41B6E6;
   -moz-box-shadow: 0 0 8px 4px #41B6E6;
@@ -7,7 +7,6 @@
   transition: 0.3s;
   width: 500px;
   height: 300px;
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 0px;
@@ -23,8 +22,13 @@
 }
 
 .cardInfo {
+  margin-top: 10px;
   position: relative;
   padding: 2px 15px;
+}
+
+.movieTitle {
+  font-size: 0.475vw;
 }
 
 .posterImg {
